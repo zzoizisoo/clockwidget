@@ -1,23 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import moment from 'moment';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  let intervalID;
+  const [time, setTime] = useState("00:00 am")
+
+  useEffect(()=>{
+    intervalID = setInterval(()=>setTime(moment().format('hh:mm a'))
+    , 5000)
+    return ()=>clearInterval(intervalID) 
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="time">{time}</div>
       </header>
     </div>
   );
