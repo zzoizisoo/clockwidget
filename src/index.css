@@ -1,10 +1,8 @@
-@font-face {
-  font-family: 'minisystem';
-  src: local('minisystem'), url('./assets/fonts/minisystem.ttf') format('truetype')
-}
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
 body {
   margin: 0;
-  font-family: minisystem;
+  font-family: 'Amatic SC', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
